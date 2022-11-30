@@ -1,0 +1,66 @@
+[
+  {
+    "count": 4,
+    "description": "Wine has a well-preserved grape flavor",
+    "id": "7567ec4b-b10c-48c5-9345-fc73c48a80aa",
+    "price": 2.4,
+    "title": "KINDZMARAULI",
+    "imageUrl": "https://shop.tbilvino.ge/wp-content/uploads/2020/05/Kindzmarauli-2021-1-350x500.png"
+  },
+  {
+    "count": 6,
+    "description": "Wine has a rich flavor of fresh grapes and quince/wildflowers scent",
+    "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a0",
+    "price": 10,
+    "title": "TSINANDALI",
+    "imageUrl": "https://shop.tbilvino.ge/wp-content/uploads/2020/05/tsinandali-2021-350x500.png"
+  },
+  {
+    "count": 7,
+    "description": "Tvishi goes well with desserts of any kind.",
+    "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a2",
+    "price": 23,
+    "title": "TVISHI",
+    "imageUrl": "https://shop.tbilvino.ge/wp-content/uploads/2020/05/Tvishi-2021-350x500.png"
+  },
+  {
+    "count": 12,
+    "description": "Flavor with aromas of blackberry, raspberry and black cranberries.",
+    "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a1",
+    "price": 15,
+    "title": "KHVANCHKARA",
+    "imageUrl": "https://shop.tbilvino.ge/wp-content/uploads/2020/05/Khvanchkara-2021-350x500.png"
+  },
+  {
+    "count": 7,
+    "description": "It has a very distinguishable, delicate, naturally sweet taste with pleasant acidity.",
+    "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a3",
+    "price": 23,
+    "title": "AKHASHENI",
+    "imageUrl": "https://shop.tbilvino.ge/wp-content/uploads/2020/05/akhasheni-2021-350x500.png"
+  },
+  {
+    "count": 8,
+    "description": "Grape flavor with undertones of ripe cherry, vanilla, and spices.",
+    "id": "7567ec4b-b10c-48c5-9345-fc73348a80a1",
+    "price": 15,
+    "title": "MUKUZANI",
+    "imageUrl": "https://shop.tbilvino.ge/wp-content/uploads/2020/05/mukuzani-ildoebi-350x500.png"
+  },
+  {
+    "count": 2,
+    "description": "Napareuli goes well with lamb barbeque and hot meat dishes.",
+    "id": "7567ec4b-b10c-48c5-9445-fc73c48a80a2",
+    "price": 23,
+    "title": "NAFAREULI",
+    "imageUrl": "https://shop.tbilvino.ge/wp-content/uploads/2020/05/napareuli2016-350x500.png"
+  },
+  {
+    "count": 3,
+    "description": "Medium-bodied wine balanced with acidity and tannins",
+    "id": "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
+    "price": 15,
+    "title": "AMBER KISI",
+    "imageUrl": "https://shop.tbilvino.ge/wp-content/uploads/2021/04/amberi-kisi-350x500.png"
+  }
+]
