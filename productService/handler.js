@@ -1,6 +1,7 @@
 'use strict';
 const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient();
+const {catalogBatchProcess} = require('./catalogBatchProcess');
 
 module.exports.getProductsList = async (event) => {
   const productsData = await docClient.scan({
@@ -85,3 +86,7 @@ module.exports.createProduct = async (event) => {
     statusCode: 200
   };
 };
+
+module.exports.catalogBatchProcess = async (event) => {
+  await catalogBatchProcess(event)
+}
