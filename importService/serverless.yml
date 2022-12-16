@@ -13,6 +13,7 @@ provider:
     cors: true
   environment:
     IMPORT_BUCKET_NAME: ${self:custom.importBucketName}
+    SQS_URL: "https://sqs.eu-west-1.amazonaws.com/779319111558/CatalogItemsQueue"
 
   # give access to DBs to Import Bucket
   iamRoleStatements:
@@ -26,6 +27,10 @@ provider:
         - s3:*
       Resource:
         - "arn:aws:s3:::cloudx-import-n19/*"
+    - Effect: "Allow"
+      Action: "sqs:*"
+      Resource:
+        - "arn:aws:sqs:eu-west-1:779319111558:CatalogItemsQueue"
 
 functions:
   importProductsFile:

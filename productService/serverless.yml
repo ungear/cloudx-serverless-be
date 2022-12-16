@@ -15,6 +15,10 @@ provider:
   environment:
     PRODUCTS_DB_NAME: ${self:custom.productsDbName}
     STOCKS_DB_NAME: ${self:custom.stocksDbName}
+    CATALOG_QUEUE:
+      Ref: CatalogItemsQueue
+    SNS_ARN:
+      Ref: CreateProductTopic
 
   # give access to DBs to everybody
   iamRoleStatements:
@@ -27,6 +31,16 @@ provider:
       Resource:
         - { "Fn::GetAtt": ["Products", "Arn"] }
         - { "Fn::GetAtt": ["Stocks", "Arn"] }
+
+    - Effect: "Allow"
+      Action: "sqs:*"
+      Resource:
+        - { "Fn::GetAtt": ["CatalogItemsQueue", "Arn"] }
+
+    - Effect: "Allow"
+      Action: "sns:*"
+      Resource:
+        Ref: CreateProductTopic
 
 
 functions:
@@ -48,6 +62,15 @@ functions:
       - httpApi:
           path: /products
           method: post
+  catalogBatchProcess:
+    handler: handler.catalogBatchProcess
+    events:
+      - sqs:
+          batchSize: 5
+          arn:
+            Fn::GetAtt:
+              - CatalogItemsQueue
+              - Arn
 
 resources:
   Resources:
@@ -78,3 +101,22 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+    
+    CatalogItemsQueue:
+      Type: AWS::SQS::Queue
+      Properties: 
+        QueueName: CatalogItemsQueue
+
+    CreateProductTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: CreateProductTopic
+
+    SNSSubscription:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Endpoint: sirredeemer@gmail.com
+        Protocol: email
+        TopicArn:
+          Ref: CreateProductTopic
+
