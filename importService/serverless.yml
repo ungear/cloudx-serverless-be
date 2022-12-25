@@ -11,6 +11,11 @@ provider:
   region: eu-west-1
   httpApi:
     cors: true
+    authorizers:
+      tokenAuthorizer:
+        type: request
+        functionArn: arn:aws:lambda:eu-west-1:779319111558:function:authorizationservice-dev-basicAuthorizer
+
   environment:
     IMPORT_BUCKET_NAME: ${self:custom.importBucketName}
     SQS_URL: "https://sqs.eu-west-1.amazonaws.com/779319111558/CatalogItemsQueue"
@@ -39,6 +44,8 @@ functions:
       - httpApi:
           path: /import
           method: get
+          authorizer:
+            name: tokenAuthorizer
 
   importFileParser:
     handler: handler.importFileParser

@@ -1,0 +1,15 @@
+service: authorizationservice
+frameworkVersion: '3'
+
+plugins:
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-west-1
+
+functions:
+  basicAuthorizer:
+    handler: handler.basicAuthorizer
